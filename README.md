@@ -12,7 +12,6 @@ A comprehensive collection of AI/ML learning materials, tutorials, and implement
   - Sample images for experimentation
 
 ### 📊 Data Analysis & Machine Learning
-- **[Regression](regression/)**: Linear and advanced regression implementations
 - **[Diamond Price Forecasting](Review/Diamond%20price%20forecasting/)**: Predictive modeling for diamond pricing
 
 ### 🔬 Core Libraries & Fundamentals
@@ -86,9 +85,8 @@ A comprehensive collection of AI/ML learning materials, tutorials, and implement
 3. Try [Computer Vision](Computer%20Vision/) projects
 
 ### Advanced
-1. Implement [Regression](regression/) models
-2. Work on [Diamond Price Forecasting](Review/Diamond%20price%20forecasting/)
-3. Explore [Genetic Algorithms](Review/Genetic%20Algorithms/)
+1. Work on [Diamond Price Forecasting](Review/Diamond%20price%20forecasting/)
+2. Explore [Genetic Algorithms](Review/Genetic%20Algorithms/)
 
 ## 🔧 Tools & Technologies
 - **Python**: Primary programming language
