@@ -1,0 +1,142 @@
+Bộ câu hỏi trắc nghiệm 1NF → 4NF (không kèm đáp án)
+
+1NF yêu cầu điều nào sau đây?
+A. Mọi thuộc tính đều là khoá
+B. Mỗi ô chứa giá trị nguyên tử
+C. Không có phụ thuộc bắc cầu
+D. Mọi MVD đều có vế trái là siêu khoá
+
+Bảng có cột Tags chứa “a,b,c” trong một ô. Vi phạm mức nào?
+A. 1NF
+B. 2NF
+C. 3NF
+D. BCNF
+
+R(Student, Course, Grade), khoá (Student, Course), FD: Course → Grade. Vi phạm gì?
+A. 1NF
+B. 2NF
+C. 3NF
+D. Không vi phạm
+
+Nếu mọi candidate key đều đơn (một thuộc tính), thì 2NF:
+A. Tự động thoả
+B. Tự động vi phạm
+C. Phụ thuộc vào MVD
+D. Không xác định
+
+R(EmpID, DeptID, DeptName), khoá EmpID, FD: DeptID → DeptName, EmpID → DeptID. Vi phạm gì?
+A. 1NF
+B. 2NF
+C. 3NF (bắc cầu)
+D. BCNF nhưng không 3NF
+
+Điều kiện 3NF cho mọi FD X → A:
+A. X phải là siêu khoá
+B. A phải là prime attribute
+C. A hoặc B đều đúng
+D. Cả A và B đều phải đúng
+
+R(Student, Course, Instructor, Room), khoá (Student, Course, Time), FD: Instructor → Room, Room non-prime. Đúng nhất:
+A. Chỉ vi phạm BCNF
+B. Chỉ vi phạm 3NF
+C. Vi phạm cả 3NF và BCNF
+D. Không vi phạm
+
+R(Stu, Crs, Grade), khoá (Stu, Crs), FD: Crs → Stu. Đúng nhất:
+A. Hợp lệ trong 3NF nhưng vi phạm BCNF
+B. Vi phạm 3NF nhưng thoả BCNF
+C. Chỉ vi phạm 2NF
+D. Không vi phạm
+
+1NF loại bỏ:
+A. Thuộc tính đa trị
+B. Phụ thuộc một phần
+C. Phụ thuộc bắc cầu
+D. Join dependency
+
+2NF loại bỏ:
+A. Phụ thuộc một phần của thuộc tính không khoá vào một phần khoá phức hợp
+B. MVD không tầm thường
+C. Join dependency bậc-3
+D. Mọi FD có vế trái không phải siêu khoá
+
+3NF loại bỏ:
+A. Mọi FD có vế trái không phải siêu khoá
+B. Phụ thuộc bắc cầu của non-prime vào non-prime
+C. MVD không tầm thường
+D. Repeating groups
+
+BCNF yêu cầu:
+A. Với mọi FD X → Y, X là siêu khoá
+B. Với mọi FD X → Y, Y là prime
+C. Với mọi FD X → Y, X hoặc Y là prime
+D. Với mọi FD X → Y, X là candidate key duy nhất
+
+4NF xử lý vi phạm do:
+A. FD
+B. Inclusion dependency
+C. MVD không tầm thường
+D. Nullability
+
+R(A,B,C) có MVD độc lập A ⟹ B và A ⟹ C, không có FD không tầm thường, khoá (A,B,C). Khẳng định đúng:
+A. Thoả BCNF nhưng vi phạm 4NF
+B. Vi phạm 3NF
+C. Vi phạm BCNF
+D. Thoả 4NF
+
+Trong 4NF, một MVD X ⟹ Y là “tầm thường” khi:
+A. X là siêu khoá
+B. Y ⊆ X
+C. X ∪ Y bằng toàn bộ thuộc tính của quan hệ
+D. |Y| = 1
+
+Để đưa R(Model, Color, Factory) với MVD độc lập về 4NF, phép tách lossless tối thiểu:
+A. R1(Model, Color), R2(Model, Factory)
+B. R1(Color, Factory), R2(Model, Color)
+C. R1(Model, Factory), R2(Color, Factory)
+D. R1(Model, Color, Factory) giữ nguyên
+
+Chọn phát biểu đúng về BCNF vs 3NF:
+A. Mọi quan hệ BCNF đều 3NF
+B. Mọi quan hệ 3NF đều BCNF
+C. BCNF chỉ mạnh hơn 4NF
+D. 3NF mạnh hơn BCNF
+
+R(A,B,C), khoá (A,B). FD: A → C, C non-prime. Kết luận:
+A. Vi phạm 2NF
+B. Vi phạm 3NF
+C. Vi phạm BCNF nhưng không 3NF
+D. Không vi phạm
+
+R(A,B,C), khoá A. FD: A → B, B → C, C non-prime. Kết luận:
+A. Vi phạm 2NF
+B. Vi phạm 3NF (bắc cầu)
+C. Vi phạm BCNF nhưng không 3NF
+D. Không vi phạm
+
+Dấu hiệu thực tế nên cân nhắc 4NF:
+A. Bùng nổ tổ hợp khi thêm giá trị ở hai thuộc tính đa trị độc lập
+B. Có nhiều candidate key
+C. Có nhiều foreign key
+D. Có nhiều chỉ mục composite
+
+1B
+2A
+3B
+4A
+5C
+6C
+7C
+8A
+9A
+10A
+11B
+12A
+13C
+14A
+15C
+16A
+17A
+18A
+19B
+20A
