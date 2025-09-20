@@ -41,6 +41,34 @@ def login_page():
             st.warning("Vui lòng nhập tên người dùng!")
 
 
+def register_page():
+    """Trang đăng ký"""
+    st.title("Đăng ký")
+
+    new_username = st.text_input("Chọn tên người dùng mới:")
+
+    if st.button("Đăng ký"):
+        if new_username:
+            users = load_users()
+            if new_username in users:
+                st.warning("Tên người dùng đã tồn tại. Vui lòng chọn tên khác.")
+            else:
+                try:
+                    with open("user.txt", "a", encoding="utf-8") as f:
+                        f.write("\n" + new_username)
+                    st.success("Đăng ký thành công! Bạn có thể quay lại trang đăng nhập.")
+
+                except Exception as e:
+                    st.error(f"Lỗi khi ghi vào file user.txt: {e}")
+        else:
+            st.warning("Vui lòng nhập tên người dùng mới!")
+
+    if st.button("Quay lại đăng nhập"):
+        st.session_state.registering = False
+        st.session_state.username = ""
+        st.rerun()
+
+
 def factorial_calculator():
     """Trang tính giai thừa"""
     st.title("Factorial Calculator")
@@ -70,6 +98,12 @@ def greeting_page():
     st.write(f"Xin chào {st.session_state.username}!")
     st.write("Bạn không có quyền truy cập vào chức năng tính giai thừa. Vui lòng chọn admin hoặc manager.")
 
+    if st.button("Đăng ký"):
+        st.session_state.show_greeting = False
+        st.session_state.username = ""
+        st.session_state.registering = True
+        st.rerun()
+
     if st.button("Quay lại đăng nhập"):
         st.session_state.show_greeting = False
         st.session_state.username = ""
@@ -84,12 +118,16 @@ def main():
         st.session_state.username = ""
     if "show_greeting" not in st.session_state:
         st.session_state.show_greeting = False
+    if "registering" not in st.session_state:
+        st.session_state.registering = False
 
     # Điều hướng trang dựa trên trạng thái đăng nhập
     if st.session_state.logged_in:
         factorial_calculator()
     elif st.session_state.show_greeting:
         greeting_page()
+    elif st.session_state.registering:
+        register_page()
     else:
         login_page()
 
